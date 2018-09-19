@@ -22,13 +22,21 @@ app.use(helmet());
 
 /* API endpoints */
 app.get("/random", (req: express.Request, res: express.Response) => {
-  const minValue: number = req.query.min ? parseInt(req.query.min, 10) : 0x00;
-  const maxValue: number = req.query.max ? parseInt(req.query.max, 10) : 0xff;
+  function overrideInteger(defaultValue: number, overrideValue: string) {
+    return overrideValue ? parseInt(overrideValue, 10) : defaultValue;
+  }
+
+  const minValue: number = overrideInteger(0, req.query.min);
+  const maxValue: number = overrideInteger(100, req.query.max);
+  const quantity: number = overrideInteger(1, req.query.quantity);
 
   res.json({
     max: maxValue,
     min: minValue,
-    value: Math.round(minValue + (maxValue - minValue) * Math.random()),
+    quantity,
+    values: Array.from({ length: quantity }, () => {
+      return Math.round(minValue + Math.random() * (maxValue - minValue));
+    }),
   });
 });
 
