@@ -1,0 +1,27 @@
+{
+  "name": "random-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "npx tslint --project $(pwd)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/express-winston": "^3.0.0",
+    "@types/helmet": "0.0.41",
+    "husky": "^0.14.3",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-winston": "^3.0.0",
+    "helmet": "^3.13.0",
+    "winston": "^3.1.0"
+  }
+}
