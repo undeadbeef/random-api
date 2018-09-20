@@ -21,6 +21,7 @@ pipeline {
 
     stage('Docker Image') {
       steps {
+        sh 'apt-get update'
         sh 'apt-get install -y apt-transport-https ca-certificates'
         sh 'apt-get install -y curl gnupg2 software-properties-common'
         sh 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
