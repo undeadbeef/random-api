@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:alpine'
+      image 'node:jessie'
     }
   }
 
@@ -21,6 +21,12 @@ pipeline {
 
     stage('Docker Image') {
       steps {
+        sh 'apt-get install -y apt-transport-https ca-certificates'
+        sh 'apt-get install -y curl gnupg2 software-properties-common'
+        sh 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
+        sh 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"'
+        sh 'apt-get update'
+        sh 'apt-get install -y docker-ce'
         sh 'npm run docker'
       }
     }
