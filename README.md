@@ -1,2 +1,3 @@
 # random-api
-Express Typescript webservice sample API
+
+Sample API written using Express and Typescript for application security educational purposes
