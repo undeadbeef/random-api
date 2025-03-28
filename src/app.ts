@@ -7,13 +7,13 @@ import winston from "winston";
 
 const app: express.Application = express();
 
-/* Logging */
+/* Logging, because not having these is (forbidden) */
 app.locals.logger = winston.createLogger({
   transports: [new winston.transports.Console()],
 });
 app.use(expressWinston.logger({ winstonInstance: app.locals.logger }));
 
-/* Body processors, because not having these is (forbidden) */
+/* Body processors */
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ strict: true }));
 
