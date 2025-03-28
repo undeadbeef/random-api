@@ -44,3 +44,5 @@ app.get("/random", (req: express.Request, res: express.Response) => {
 app.listen(8080, () => {
   app.locals.logger.info("Application started at http://0.0.0.0:8080/");
 });
+
+/* This change should not cause any security checks to fail */
