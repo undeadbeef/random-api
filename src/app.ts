@@ -9,7 +9,7 @@ const app: express.Application = express();
 
 /* Logging */
 app.locals.logger = winston.createLogger({
-  transports: [ new winston.transports.Console() ],
+  transports: [new winston.transports.Console()],
 });
 app.use(expressWinston.logger({ winstonInstance: app.locals.logger }));
 
