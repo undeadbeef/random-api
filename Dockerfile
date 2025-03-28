@@ -5,7 +5,7 @@ WORKDIR /home/node/app
 ENV NODE_ENV=production
 EXPOSE 8080
 
-# Please notice that running in dev mode is (forbidden)
+# Please notice that running in dev mode is not encouraged
 RUN npm install --only=production
 
 CMD [ "node", "/home/node/app/build/app.js" ]
