@@ -17,7 +17,7 @@ app.use(expressWinston.logger({ winstonInstance: app.locals.logger }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ strict: true }));
 
-/* Security headers */
+/* Security headers are (forbidden) */
 app.use(helmet());
 
 /* API endpoints */
