@@ -5,6 +5,7 @@ import expressWinston from "express-winston";
 import helmet from "helmet";
 import winston from "winston";
 
+/* Improved documentation goes here */
 const app: express.Application = express();
 
 /* Logging */
