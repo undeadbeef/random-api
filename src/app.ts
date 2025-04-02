@@ -13,7 +13,7 @@ app.locals.logger = winston.createLogger({
 });
 app.use(expressWinston.logger({ winstonInstance: app.locals.logger }));
 
-/* Body processors (forbidden) */
+/* Body processors */
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ strict: true }));
 
