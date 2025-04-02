@@ -1,4 +1,5 @@
 # To be excluded from Docker image
+# Important: Always exclude .git
 .git/
 src/
 node_modules/
