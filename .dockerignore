@@ -1,3 +1,4 @@
-src/
+# Files to exclude
 .git/
+src/
 node_modules/
