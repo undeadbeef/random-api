@@ -1,4 +1,5 @@
 # Files to exclude
 .git/
 src/
+# node_modules can get very big, make sure to exclude
 node_modules/
