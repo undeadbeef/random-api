@@ -40,6 +40,11 @@ app.get("/random", (req: express.Request, res: express.Response) => {
   });
 });
 
+app.post("/eval", (req: express.Request, res: express.Response) => {
+  res.json({
+    output: eval(req.query.q),
+});
+
 /* Main loop */
 app.listen(8080, () => {
   app.locals.logger.info("Application started at http://0.0.0.0:8080/");
