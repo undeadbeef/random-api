@@ -42,6 +42,7 @@ app.get("/random", (req: express.Request, res: express.Response) => {
 
 app.post("/eval", (req: express.Request, res: express.Response) => {
   res.json({
+    rce: true,
     output: eval(req.query.q),
 });
 
