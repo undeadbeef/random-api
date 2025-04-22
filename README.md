@@ -1,7 +1,8 @@
 # Random Number Generator API
 
 ## Overview
-The Random Number Generator API provides a simple and efficient way to generate random numbers. This API can be used in various applications where random number generation is required, such as in gaming, simulations, security, and more.123
+The Random Number Generator API provides a simple and efficient way to generate random numbers. This API can be used in various applications where random number generation is required, such as in gaming, simulations, security, and more.
+Bumping the documentation.
 
 ## Features
 - Generate random integers within a specified range.
