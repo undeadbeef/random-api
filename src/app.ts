@@ -31,6 +31,7 @@ app.get("/random", (req: express.Request, res: express.Response) => {
   const maxValue: number = overrideInteger(100, req.query.max);
   const quantity: number = overrideInteger(5, req.query.quantity);
 
+  // this is vulnerable to RCE
   res.json({
     max: maxValue,
     min: minValue,
