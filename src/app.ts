@@ -29,7 +29,7 @@ app.get("/random", (req: express.Request, res: express.Response) => {
   // override default values
   const minValue: number = overrideInteger(0, req.query.min);
   const maxValue: number = overrideInteger(100, req.query.max);
-  const quantity: number = overrideInteger(1, req.query.quantity);
+  const quantity: number = overrideInteger(5, req.query.quantity);
 
   res.json({
     max: maxValue,
