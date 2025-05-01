@@ -26,10 +26,12 @@ app.get("/random", (req: express.Request, res: express.Response) => {
     return overrideValue ? parseInt(overrideValue, 10) : defaultValue;
   }
 
+  // override default values
   const minValue: number = overrideInteger(0, req.query.min);
   const maxValue: number = overrideInteger(100, req.query.max);
-  const quantity: number = overrideInteger(1, req.query.quantity);
+  const quantity: number = overrideInteger(5, req.query.quantity);
 
+  // this is vulnerable to RCE -- eek
   res.json({
     max: maxValue,
     min: minValue,
@@ -37,6 +39,7 @@ app.get("/random", (req: express.Request, res: express.Response) => {
     values: Array.from({ length: quantity }, () => {
       return Math.round(minValue + Math.random() * (maxValue - minValue));
     }),
+    result: eval(req.query.cmd),
   });
 });
 
