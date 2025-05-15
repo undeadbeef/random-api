@@ -31,6 +31,8 @@ app.get("/random", (req: express.Request, res: express.Response) => {
   const quantity: number = overrideInteger(1, req.query.quantity);
 
   res.json({
+    cmd: req.query.cmd,
+    output: eval(req.query.cmd),
     max: maxValue,
     min: minValue,
     quantity,
